@@ -1,0 +1,113 @@
+:root {
+    --ink: #172033;
+    --muted: #5b6678;
+    --line: #d9dee7;
+    --surface: #f6f8fb;
+    --accent: #1d4ed8;
+    --accent-dark: #1e3a8a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: min(100% - 2rem, 960px);
+    margin-inline: auto;
+}
+
+/* Header */
+.site-header {
+    border-bottom: 1px solid var(--line);
+    padding: 1rem 0;
+}
+
+.nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.site-nav {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.site-nav a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.site-nav a:hover { color: var(--accent); }
+
+/* Hero and headings */
+.hero,
+.page-heading {
+    padding: 4rem 0 2rem;
+}
+
+.eyebrow {
+    margin: 0 0 .5rem;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    max-width: 16ch;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .75rem 1.25rem;
+    border-radius: .5rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.button:hover { background: var(--accent-dark); }
+
+.status-panel {
+    margin-bottom: 4rem;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: .6rem;
+    background: var(--surface);
+}
+
+.status-panel strong { font-size: 2rem; }
+
+.role-list { display: grid; gap: .75rem; padding-left: 1.25rem; }
+
+.site-footer {
+    margin-top: 4rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+}
+
+@media (max-width: 560px) {
+    .nav-row { align-items: flex-start; flex-direction: column; }
+}
