@@ -1,20 +1,11 @@
-# Python
-venv/
 .venv/
+venv/
 __pycache__/
 *.py[cod]
-
-# Django
-db.sqlite3
-*.log
-staticfiles/
-media/
-
-# Environment / secrets
+backend/db.sqlite3
 .env
-
-# Editors / OS
+.env.*
+!.env.example
 .vscode/
 .idea/
-.DS_Store
-Thumbs.db
+node_modules/
