@@ -1,11 +1,11 @@
+from datetime import timedelta
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError, transaction
 from django.db.models import ProtectedError
 from django.test import TestCase
 from django.utils import timezone
-from datetime import timedelta
-from .models import Category, ServiceRequest, WorkOrder
+from requests_app.models import Category, ServiceRequest, WorkOrder
 
 
 class ServiceRequestModelTests(TestCase):
@@ -66,8 +66,6 @@ class ServiceRequestModelTests(TestCase):
                     technician=self.technician,
                 )
 
-    # --- Part N: In-Lab Exercise Tests ---
-
     def test_resolved_without_summary_or_timestamp_fails_clean(self):
         item = self.make_request()
         item.status = ServiceRequest.Status.RESOLVED
@@ -89,7 +87,6 @@ class ServiceRequestModelTests(TestCase):
         item.status = ServiceRequest.Status.RESOLVED
         item.resolved_at = timezone.now()
         item.resolution_summary = "Replaced socket faceplate and retested voltage."
-        # Should not raise
         item.full_clean()
 
     def test_due_at_filtering(self):
