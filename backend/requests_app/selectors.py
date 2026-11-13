@@ -38,3 +38,4 @@ def service_request_summary_counts(*, user):
         assigned_count=Count("id", filter=Q(status=ServiceRequest.Status.ASSIGNED)),
         resolved_count=Count("id", filter=Q(status=ServiceRequest.Status.RESOLVED)),
     )
+

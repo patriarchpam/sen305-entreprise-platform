@@ -67,3 +67,4 @@ class ResolutionForm(forms.Form):
         if len(notes) < 3:
             raise forms.ValidationError("Enter meaningful resolution work notes.")
         return notes
+

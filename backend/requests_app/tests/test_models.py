@@ -98,3 +98,4 @@ class ServiceRequestModelTests(TestCase):
         due_soon = ServiceRequest.objects.filter(due_at__lte=cutoff)
         self.assertIn(req1, due_soon)
         self.assertNotIn(req2, due_soon)
+

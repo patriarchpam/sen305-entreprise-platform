@@ -12,3 +12,4 @@ urlpatterns = [
     path("<uuid:request_id>/assign/", views.request_assign, name="assign"),
     path("<uuid:request_id>/resolve/", views.request_resolve, name="resolve"),
 ]
+

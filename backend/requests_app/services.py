@@ -82,3 +82,4 @@ def service_request_resolve(*, item, actor, work_notes):
     locked.full_clean()
     locked.save(update_fields=["status", "resolved_at", "resolution_summary", "updated_at"])
     return locked
+
